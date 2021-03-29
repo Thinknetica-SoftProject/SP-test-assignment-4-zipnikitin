@@ -17,3 +17,25 @@
 ## Решение:
 
 
+n=0
+str=IO.readlines('data/4.txt')
+for i in (0..(str.length-1))
+a=str[i].split(/x/).map(&:to_i)
+l=a.min
+w=a.max
+if a[0]==l and a[1]==w 
+h=a[2]
+elsif a[1]==l and a[0]==w 
+h=a[2]
+elsif a[1]==l and a[2]==w 
+h=a[0]
+elsif a[2]==l and a[1]==w 
+h=a[0]
+elsif a[0]==l and a[2]==w 
+h=a[1]
+else 
+h=a[1]
+end
+n=n+2*w*l+2*l*h+2*h*w+l*h
+end
+puts n
