@@ -21,6 +21,7 @@ content = file.read
 elements = content.split(//)
 c=0
 elements.each { |i| if i == "("; c+=1 elsif i == ")"; c-=1 end }
+file.close
 puts c
 
 
