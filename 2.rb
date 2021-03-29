@@ -16,3 +16,22 @@
 #
 ## Решение:
 
+require "digest"
+a=0
+b=0
+c=0
+last=gets.chomp
+edit=Digest::MD5.hexdigest(last)
+while a !=1
+c +=1
+n=last+c.to_s
+edit=Digest::MD5.hexdigest(n)
+s=edit.split(//)
+s[0..4].each { |i| if i=='0'; b += 1 end }
+if b==5
+a=1
+else
+b=0
+end
+end
+puts(c)
