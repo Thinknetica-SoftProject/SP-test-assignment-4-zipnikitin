@@ -10,4 +10,13 @@
 #
 ## Решение:
 
+c=0
+str=IO.readlines('data/3.txt')
+for i in (0..(str.length-1))
+a=str[i].split(/\t/).map(&:to_i)
+max=a.max
+min=a.min
+c=max-min+c
+end
+puts c
 
